@@ -11,7 +11,6 @@ class QuestionTextarea extends React.Component {
     };
 
     render() {
-        // let visibility = this.props.question ? 'hidden' : 'visible';
         const formVisibility = {
             display: this.props.question ? 'none' : 'block',
         };
@@ -27,9 +26,10 @@ class QuestionTextarea extends React.Component {
                 </label>
                 <textarea
                     id="question"
+                    autoFocus="autofocus"
                     className="appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                     ref={this.questionRef}
-                    placeholder="e.g. Should I apply for a new job?"
+                    placeholder="e.g. Is now a good time for me to buy a house?"
                 />
                 <button
                     className="bg-grey-dark text-white hover:bg-blue-light hover:text-slate py-2 px-4 my-2 rounded focus:outline-none focus:shadow-outline"

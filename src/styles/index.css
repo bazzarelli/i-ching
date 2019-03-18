@@ -5,7 +5,15 @@
 body {
     background-color: #9aacb8;
 }
-
+.hex-number {
+    border-radius: 50%;
+}
+.hexagram-glyph {
+    fill: mistyrose;
+}
+h1 {
+    font-family: 'Fondamento', cursive;
+}
 #coin {
     position: relative;
     margin: 0 auto;

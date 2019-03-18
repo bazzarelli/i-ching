@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Fondamento|Itim|Kalam|Leckerli+One|Merienda+One|Permanent+Marker');
+
+            <ul id="hexagram-primary" className="list-reset w-48 h-48">
+                <li className="flex line">
+                    <div className="flex-1 bg-black solid">.</div>
+                </li>
+                <li className="flex content-between line">
+                    <div className="flex-initial w-12 bg-black broken">.</div>
+                    <div className="flex-none">.</div>
+                    <div className="flex-initial w-12 bg-black broken">.</div>
+                </li>
+                <li className="line" />
+                <li className="line" />
+                <li className="line" />
+                <li className="line" />
+            </ul>
+
+
+
+// import base from './base';
+
+    componentDidMount() {
+        this.ref = base.syncState('question', {
+            context: this,
+            state: 'question',
+        });
+    }
+

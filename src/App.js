@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-import CoinToss from './components/CoinToss';
 import FormulatedQuestion from './components/FormulatedQuestion';
 import HexBuilder from './components/HexBuilder';
 import hexes from './data/hexes';
@@ -9,9 +8,26 @@ import QuestionTextarea from './components/QuestionTextarea';
 class App extends Component {
     state = {
         hexLibrary: hexes,
-        hexagram: {},
+        hexagram: 1,
         question: '',
     };
+
+    componentDidMount() {
+        const localStorageQuestion = localStorage.getItem('question');
+        const localStorageHexagram = localStorage.getItem('hexagram');
+
+        if (localStorageHexagram) {
+            this.setState({ hexagram: localStorageHexagram });
+        }
+        if (localStorageQuestion) {
+            this.setState({ question: localStorageQuestion });
+        }
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('question', this.state.question);
+        localStorage.setItem('hexagram', this.state.hexagram);
+    }
 
     logQuestion = q => {
         let question = { ...this.state.question };
@@ -23,22 +39,29 @@ class App extends Component {
         let hexagram = { ...this.state.hexagram };
         hexagram = toss;
 
-        // hexagram[`toss-${Date.now()}`] = toss;
-
         this.setState({ hexagram });
     };
 
     render() {
         return (
-            <div className="flex flex-wrap bg-lead">
-                <div className="flex-1 bg-frost px-4 py-2 m-2 rounded">
-                    <Header heading="I-Ching" />
-                    <QuestionTextarea logQuestion={this.logQuestion} question={this.state.question} />
-                    <CoinToss addHex={this.addHex} />
-                </div>
-                <div className="flex-1 text-grey-darker text-center bg-frost px-4 py-2 m-2 rounded">
-                    <FormulatedQuestion question={this.state.question} />
-                    <HexBuilder />
+            <div>
+                <Header heading="i-ching for beginners" subHeading="divination within chaos" />
+                <div className="flex flex-row flex-wrap bg-lead">
+                    <div className="flex-1 bg-frost px-4 py-2 m-2 rounded">
+                        <FormulatedQuestion
+                            question={this.state.question}
+                            addHex={this.addHex}
+                            hexId={this.state.hexagram}
+                        />
+                        <QuestionTextarea logQuestion={this.logQuestion} question={this.state.question} />
+                    </div>
+                    <div className="flex-1 text-grey-darker text-center bg-frost px-4 py-2 m-2 rounded">
+                        <HexBuilder
+                            currentHexId={this.state.hexagram}
+                            allHexes={this.state.hexLibrary}
+                            question={this.state.question}
+                        />
+                    </div>
                 </div>
             </div>
         );

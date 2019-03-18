@@ -1,56 +1,56 @@
 const hexes = {
-    hex01: {
+    hex1: {
         id: 1,
         name: "Ch'ien",
-        image: '/images/hexagrams/01.png',
+        image: '/images/hexagrams/1.png',
         desc: 'Creating',
     },
-    hex02: {
+    hex2: {
         id: 2,
         name: "K'un",
-        image: '/images/hexagrams/02.png',
+        image: '/images/hexagrams/2.png',
         desc: 'Open, Receptive, Yielding, Willing to Follow',
     },
-    hex03: {
+    hex3: {
         id: 3,
         name: 'Chun',
-        image: '/images/hexagrams/03.png',
+        image: '/images/hexagrams/3.png',
         desc: 'Difficulty and Danger at the Beginning',
     },
-    hex04: {
+    hex4: {
         id: 4,
         name: 'Mêng',
-        image: '/images/hexagrams/04.png',
+        image: '/images/hexagrams/4.png',
         desc: 'Inexperience',
     },
-    hex05: {
+    hex5: {
         id: 5,
         name: 'Hsü',
-        image: '/images/hexagrams/05.png',
+        image: '/images/hexagrams/5.png',
         desc: 'Holding Back in the Face of Danger',
     },
-    hex06: {
+    hex6: {
         id: 6,
         name: 'Sung',
-        image: '/images/hexagrams/06.png',
+        image: '/images/hexagrams/6.png',
         desc: 'Argument, Dispute, Conflict, Adversaries',
     },
-    hex07: {
+    hex7: {
         id: 7,
         name: 'Shih',
-        image: '/images/hexagrams/07.png',
+        image: '/images/hexagrams/7.png',
         desc: 'Collective Forces',
     },
-    hex08: {
+    hex8: {
         id: 8,
         name: 'Pi',
-        image: '/images/hexagrams/08.png',
+        image: '/images/hexagrams/8.png',
         desc: 'Joining, Supporting, Uniting',
     },
-    hex09: {
+    hex9: {
         id: 9,
         name: "Hsiao Ch'u",
-        image: '/images/hexagrams/09.png',
+        image: '/images/hexagrams/9.png',
         desc: 'Gentle Restraint, Holding Back',
     },
     hex10: {

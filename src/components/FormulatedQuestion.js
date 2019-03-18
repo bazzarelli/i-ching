@@ -1,4 +1,5 @@
 import React from 'react';
+import CoinToss from './CoinToss';
 
 class FormulatedQuestion extends React.Component {
     render() {
@@ -6,9 +7,8 @@ class FormulatedQuestion extends React.Component {
 
         return (
             <header className={visibility}>
-                <h1 className="text-center text-nightfall bg-grey-lightest rounded px-8 pt-6 pb-8">
-                    {this.props.question}
-                </h1>
+                <h2 className="text-center text-red-light bg-currant rounded px-6 py-6">{this.props.question}</h2>
+                <CoinToss question={this.props.question} addHex={this.props.addHex} />
             </header>
         );
     }

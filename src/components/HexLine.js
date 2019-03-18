@@ -2,9 +2,9 @@ import React from 'react';
 
 class HexLine extends React.Component {
     render() {
-        const lineStyle = {
-            borderBottom: '1px solid red',
-        };
+        // const lineStyle = {
+        //     borderBottom: '1px solid red',
+        // };
 
         return (
             <svg viewBox="0 0 395 500" version="1.1">
