@@ -45,7 +45,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Header heading="i-ching for beginners" subHeading="divination within chaos" />
+                <Header heading="i-ching for beginners" subHeading="chaos divination" />
                 <div className="flex flex-row flex-wrap bg-lead">
                     <div className="flex-1 bg-frost px-4 py-2 m-2 rounded">
                         <FormulatedQuestion
