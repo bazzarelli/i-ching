@@ -1,19 +1,22 @@
 import React from "react";
+import logo from "../images/yin-yang-trigrams.svg";
 const images = require.context("../images", true);
-// import HexLine from './HexLine';
 
 class HexBuilder extends React.Component {
   render() {
-    const hexVisibility = {
-      display: this.props.question ? "block" : "none"
-    };
     const currentId = this.props.currentHexId;
-    const currentHexId = `hex${currentId}`;
-    const hexData = this.props.allHexes[currentHexId];
-    const imgSrc = images(`./hexagrams/svg/${currentId}.svg`);
+    let hexData = { name: "", desc: "" };
+    let imgSrc = logo;
+    console.log("imgSrc", imgSrc);
+    console.log("currentId", currentId);
+    if (currentId) {
+      const currentHexId = `hex${currentId}`;
+      hexData = this.props.allHexes[currentHexId];
+      imgSrc = images(`./hexagrams/svg/${currentId}.svg`);
+    }
 
     return (
-      <div style={hexVisibility}>
+      <div>
         <p className="rounded-lg mt-2 w-8 h-8 flex items-center justify-center bg-grey-lighter text-grey-darkest font-semibold">
           {currentId}
         </p>

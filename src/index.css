@@ -6209,7 +6209,7 @@ table {
 }
 
 .text-5xl {
-  font-size: 3rem;
+  font-size: 5rem;
 }
 
 .italic {
@@ -6622,6 +6622,7 @@ body {
 }
 
 .question-header {
+  display: block;
   -webkit-animation-name: growQuestionHeader;
           animation-name: growQuestionHeader;
   -webkit-animation-duration: 1s;
@@ -6635,7 +6636,7 @@ body {
 }
 
 .question-header-shut {
-  height: 0;
+  display: none;
 }
 
 .hex-number {
@@ -12417,7 +12418,7 @@ h1 {
   }
 
   .sm\:text-5xl {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 
   .sm\:italic {
@@ -18485,7 +18486,7 @@ h1 {
   }
 
   .md\:text-5xl {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 
   .md\:italic {
@@ -24553,7 +24554,7 @@ h1 {
   }
 
   .lg\:text-5xl {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 
   .lg\:italic {
@@ -30621,7 +30622,7 @@ h1 {
   }
 
   .xl\:text-5xl {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 
   .xl\:italic {

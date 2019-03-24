@@ -20,6 +20,7 @@ body {
   }
 }
 .question-header {
+  display: block;
   animation-name: growQuestionHeader;
   animation-duration: 1s;
   animation-play-state: running;
@@ -28,7 +29,7 @@ body {
 }
 
 .question-header-shut {
-  height: 0;
+  display: none;
 }
 
 .hex-number {

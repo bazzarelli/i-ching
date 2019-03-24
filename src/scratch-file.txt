@@ -15,6 +15,11 @@
                 <li className="line" />
             </ul>
 
+// concat in template
+            className={
+              headerClass +
+              " text-4xl text-center text-grey-light font-thin bg-black rounded px-6 py-6"
+            }
 
 
 // import base from './base';
