@@ -1,24 +1,18 @@
 import React from "react";
-import logo from "../images/yin-yang-trigrams.svg";
+// import logo from "../images/yin-yang-trigrams.svg";
 const images = require.context("../images", true);
 
 class HexBuilder extends React.Component {
   render() {
-    const currentId = this.props.currentHexId;
-    let hexData = { name: "", desc: "" };
-    let imgSrc = logo;
-    console.log("imgSrc", imgSrc);
-    console.log("currentId", currentId);
-    if (currentId) {
-      const currentHexId = `hex${currentId}`;
-      hexData = this.props.allHexes[currentHexId];
-      imgSrc = images(`./hexagrams/svg/${currentId}.svg`);
-    }
+    const currentId = this.props.currentHexId || 0;
+    const currentHexId = `hex${currentId}`;
+    const hexData = this.props.allHexes[currentHexId];
+    const imgSrc = images(`./hexagrams/svg/${currentId}.svg`);
 
     return (
       <div>
-        <p className="rounded-lg mt-2 w-8 h-8 flex items-center justify-center bg-grey-lighter text-grey-darkest font-semibold">
-          {currentId}
+        <p className="rounded-lg w-8 h-8 flex items-center justify-center bg-grey-lighter text-grey-darkest font-semibold">
+          {currentId || "?"}
         </p>
         <h2 className="text-slate">{hexData.name}</h2>
         <img
