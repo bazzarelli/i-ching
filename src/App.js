@@ -9,9 +9,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            hexLibrary: hexes,
-            hexagram: 0,
-            question: ''
+            hexLibrary: hexes
         };
     }
 
@@ -62,7 +60,7 @@ class App extends Component {
             <div>
                 <Header
                     heading="i-ching for beginners"
-                    subHeading="receive guidance from the ancient oracle"
+                    subHeading="guidance from the ancient oracle"
                 />
                 <div className="md:flex md:flex-wrap bg-lead">
                     <div className="md:flex-1 bg-frost p-4 m-2 rounded">
@@ -71,10 +69,10 @@ class App extends Component {
                             question={this.state.question}
                         />
                         <FormulatedQuestion
-                            question={this.state.question}
                             addHex={this.addHex}
-                            hexId={this.state.hexagram}
                             reset={this.clearUserState}
+                            question={this.state.question}
+                            hexId={this.state.hexagram}
                         />
                     </div>
                     <div className="md:flex-1 text-grey-darker text-center bg-frost p-4 m-2 rounded">

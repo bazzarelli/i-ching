@@ -38,7 +38,7 @@ class QuestionTextarea extends React.Component {
                     className="bg-grey-dark text-white hover:bg-blue-light hover:text-slate py-2 px-4 my-2 rounded focus:outline-none focus:shadow-outline"
                     type="submit"
                 >
-                    save
+                    save question
                 </button>
             </form>
         );
