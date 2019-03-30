@@ -1,41 +1,47 @@
-import React from 'react';
-import CoinToss from './CoinToss';
-import classNames from 'classnames';
-import StartOver from './StartOver';
+import React from 'react'
+import CoinToss from './CoinToss'
+import classNames from 'classnames'
+import StartOver from './StartOver'
 
 class FormulatedQuestion extends React.Component {
     render() {
-        const hasQuestion = this.props.question;
+        const hasQuestion = this.props.question
+        const hasHexagram = this.props.hexId
 
-        const headerClass = classNames({
-            'question-header': hasQuestion,
-            open: hasQuestion,
-            shut: !hasQuestion
-        });
-
-        const buttonContainerClass = classNames({
-            flex: hasQuestion,
+        const headerClasses = classNames('question-header', {
             visible: hasQuestion,
-            hidden: !hasQuestion
-        });
+            hidden: !hasQuestion,
+        })
+
+        const coinTossButtonClasses = classNames({
+            visible: hasQuestion,
+            hidden: !hasQuestion,
+        })
+
+        const resetButtonClasses = classNames({
+            visible: hasHexagram,
+            hidden: !hasHexagram,
+        })
 
         return (
             <div>
-                <header className={headerClass}>
-                    <h2 className="text-4xl text-center text-grey-light font-thin bg-grey-darker rounded px-6 py-6">
+                <header className={headerClasses}>
+                    <h2 className="text-4xl text-center text-slate-blue font-thin rounded p-3">
                         {this.props.question}
                     </h2>
                 </header>
-                <div className={buttonContainerClass}>
+                <span className={coinTossButtonClasses}>
                     <CoinToss
                         question={this.props.question}
                         addHex={this.props.addHex}
                     />
+                </span>
+                <span className={resetButtonClasses}>
                     <StartOver reset={this.props.reset} />
-                </div>
+                </span>
             </div>
-        );
+        )
     }
 }
 
-export default FormulatedQuestion;
+export default FormulatedQuestion

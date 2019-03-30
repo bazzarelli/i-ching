@@ -9,7 +9,8 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            hexLibrary: hexes
+            hexLibrary: hexes,
+            hexagram: 0
         };
     }
 
@@ -63,7 +64,7 @@ class App extends Component {
                     subHeading="guidance from the ancient oracle"
                 />
                 <div className="md:flex md:flex-wrap bg-lead">
-                    <div className="md:flex-1 bg-frost p-4 m-2 rounded">
+                    <div className="main-col md:flex-1 bg-frost opacity-75 p-4 pb-6 m-2 rounded">
                         <QuestionTextarea
                             logQuestion={this.logQuestion}
                             question={this.state.question}
@@ -75,7 +76,7 @@ class App extends Component {
                             hexId={this.state.hexagram}
                         />
                     </div>
-                    <div className="md:flex-1 text-grey-darker text-center bg-frost p-4 m-2 rounded">
+                    <div className="main-col md:flex-1 text-grey-darker text-center bg-frost opacity-75 p-4 pb-6 m-2 rounded">
                         <HexBuilder
                             currentHexId={this.state.hexagram}
                             allHexes={this.state.hexLibrary}

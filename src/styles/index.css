@@ -3,88 +3,105 @@
 
 /* Your custom CSS here */
 body {
-  background-color: #9aacb8;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23584478' fill-opacity='0.03' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-color: #9aacb8;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23584478' fill-opacity='0.03' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.main-col {
+    /* background-image: linear-gradient(#DDE2E3 0%, #9AACB8 100%); */
+    background: radial-gradient(ellipse at center, rgba(154, 182, 210, 0.9) 20%, rgba(221, 226, 227, 0.75) 100%);
+}
+
+.i-ching-logo {
+    animation: i-ching-logo-spin infinite 60s linear;
+    /* height: 40vmin; */
+    pointer-events: none;
+}
+
+@keyframes i-ching-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.question-header.shut {
+    opacity: 0;
 }
 
 .question-header {
-  transition: opacity height 1s;
-}
-
-.shut {
-  display: none;
-}
-.question-header .open {
-  opacity: 1;
-  height: 200px;
+    transition: opacity 600ms ease-in;
+    opacity: 1;
 }
 
 .hex-number {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 .hexagram-glyph {
-  fill: mistyrose;
+    fill: mistyrose;
 }
 h1 {
-  font-family: "Fondamento", cursive;
+    font-family: 'Fondamento', cursive;
 }
 #coin {
-  position: relative;
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
 }
 #coin div {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3),
-    0 12px 20px -10px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3),
+        0 12px 20px -10px rgba(0, 0, 0, 0.4);
 }
 .side-a {
-  background-color: #12b209;
-  border: 6px solid #109e08;
+    background-color: #12b209;
+    border: 6px solid #109e08;
 }
 .side-b {
-  background-color: #ff7919;
-  border: 6px solid #a14c10;
+    background-color: #ff7919;
+    border: 6px solid #a14c10;
 }
 #coin {
-  transition: -webkit-transform 1s ease-in;
-  -webkit-transform-style: preserve-3d;
+    transition: -webkit-transform 1s ease-in;
+    -webkit-transform-style: preserve-3d;
 }
 #coin div {
-  position: absolute;
-  -webkit-backface-visibility: hidden;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
 }
 .side-a {
-  z-index: 100;
+    z-index: 100;
 }
 .side-b {
-  -webkit-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
 }
 
 #coin.heads {
-  animation: flipHeads 3s ease-out forwards;
+    animation: flipHeads 3s ease-out forwards;
 }
 #coin.tails {
-  animation: flipTails 3s ease-out forwards;
+    animation: flipTails 3s ease-out forwards;
 }
 
 @-webkit-keyframes flipHeads {
-  from {
-    transform: rotateY(0);
-  }
-  to {
-    transform: rotateY(1800deg);
-  }
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(1800deg);
+    }
 }
 @-webkit-keyframes flipTails {
-  from {
-    transform: rotateY(0);
-  }
-  to {
-    transform: rotateY(1980deg);
-  }
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(1980deg);
+    }
 }
