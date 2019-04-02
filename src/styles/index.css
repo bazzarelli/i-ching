@@ -8,8 +8,8 @@ body {
 }
 
 .main-col {
-    /* background-image: linear-gradient(#DDE2E3 0%, #9AACB8 100%); */
-    background: radial-gradient(ellipse at center, rgba(154, 182, 210, 0.9) 20%, rgba(221, 226, 227, 0.75) 100%);
+    background-image: linear-gradient(#DDE2E3 0%, #9AACB8 100%);
+    /* background: radial-gradient(ellipse at center, rgba(154, 182, 210, 0.9) 20%, rgba(221, 226, 227, 0.75) 100%); */
 }
 
 .i-ching-logo {

@@ -1,64 +1,64 @@
-import React, { Component } from 'react';
-import Header from './components/Header';
-import FormulatedQuestion from './components/FormulatedQuestion';
-import HexBuilder from './components/HexBuilder';
-import QuestionTextarea from './components/QuestionTextarea';
-import hexes from './data/hexes';
+import React, { Component } from 'react'
+import Header from './components/Header'
+import FormulatedQuestion from './components/FormulatedQuestion'
+import HexBuilder from './components/HexBuilder'
+import QuestionTextarea from './components/QuestionTextarea'
+import hexes from './data/hexes'
 
 class App extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             hexLibrary: hexes,
-            hexagram: 0
-        };
+            hexagram: 0,
+        }
     }
 
     componentDidMount() {
-        const localStorageQuestion = localStorage.getItem('question');
-        const localStorageHexagram = localStorage.getItem('hexagram');
+        const localStorageQuestion = localStorage.getItem('question')
+        const localStorageHexagram = localStorage.getItem('hexagram')
 
         if (localStorageHexagram) {
-            this.setState({ hexagram: localStorageHexagram });
+            this.setState({ hexagram: localStorageHexagram })
         }
         if (localStorageQuestion) {
-            this.setState({ question: localStorageQuestion });
+            this.setState({ question: localStorageQuestion })
         }
     }
 
     componentDidUpdate() {
-        localStorage.setItem('question', this.state.question);
-        localStorage.setItem('hexagram', this.state.hexagram);
+        localStorage.setItem('question', this.state.question)
+        localStorage.setItem('hexagram', this.state.hexagram)
     }
 
     clearUserState = items => {
-        const { question, hexagram } = items;
+        const { question, hexagram } = items
 
         if (question.clear) {
-            localStorage.removeItem('question');
-            this.setState({ question: '' });
+            localStorage.removeItem('question')
+            this.setState({ question: '' })
         }
         if (hexagram.clear) {
-            localStorage.removeItem('hexagram');
-            this.setState({ hexagram: '' });
+            localStorage.removeItem('hexagram')
+            this.setState({ hexagram: '' })
         }
-    };
+    }
 
     logQuestion = q => {
-        let question = { ...this.state.question };
-        question = q;
-        this.setState({ question });
-    };
+        let question = { ...this.state.question }
+        question = q
+        this.setState({ question })
+    }
 
     addHex = toss => {
-        let hexagram = { ...this.state.hexagram };
-        hexagram = toss;
-        this.setState({ hexagram });
-    };
+        let hexagram = { ...this.state.hexagram }
+        hexagram = toss
+        this.setState({ hexagram })
+    }
 
     render() {
         return (
-            <div>
+            <>
                 <Header
                     heading="i-ching for beginners"
                     subHeading="guidance from the ancient oracle"
@@ -84,9 +84,9 @@ class App extends Component {
                         />
                     </div>
                 </div>
-            </div>
-        );
+            </>
+        )
     }
 }
 
-export default App;
+export default App

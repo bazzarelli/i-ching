@@ -22,8 +22,9 @@
             }
 
 
-// import base from './base';
+// import logo from "../images/yin-yang-trigrams.svg";
 
+// import base from './base';
     componentDidMount() {
         this.ref = base.syncState('question', {
             context: this,

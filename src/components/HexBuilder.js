@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from "../images/yin-yang-trigrams.svg";
 import classNames from 'classnames';
 const images = require.context('../images', true);
 
@@ -11,7 +10,7 @@ class HexBuilder extends React.Component {
         const imgSrc = images(`./hexagrams/svg/${currentId}.svg`);
 
         const hexagramClasses = classNames('w-1/2', 'hexagram-glyph', {
-            'i-ching-logo': !currentId
+            'i-ching-logo': !currentId,
         });
 
         return (
