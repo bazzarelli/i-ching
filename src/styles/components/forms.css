@@ -1,12 +1,18 @@
 .btn {
-    @apply py-2 px-4 my-2 rounded;
+    @apply py-2 px-4 my-2 rounded inline-block no-underline;
 }
 .btn:focus {
-    @apply outline-none shadow-outline;
+    @apply outline-none shadow-outline no-underline;
+}
+.btn:hover {
+    @apply  no-underline;
 }
 .btn-submit {
-    @apply bg-grey-dark text-grey-lighter;
+    @apply bg-grey-dark text-grey-light border-2 border-solid border-grey-dark;
 }
 .btn-submit:hover {
-    @apply bg-orange-light text-slate;
+    @apply bg-orange-light text-orange border-grey-darker;
+}
+.click-counter {
+    @apply inline-block ml-4 bg-orange-light rounded-full h-8 w-8 pt-2 text-center;
 }

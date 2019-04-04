@@ -496,13 +496,13 @@ table {
   border-collapse: collapse;
 }
 
-/* @import "/styles/components/forms"; */
+/* component CSS here */
 
 .btn {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
   margin-top: .5rem;
   margin-bottom: .5rem;
   border-radius: .25rem;
@@ -6646,7 +6646,7 @@ table {
   z-index: auto;
 }
 
-/* Your custom CSS here */
+/* Custom CSS here */
 
 body {
   background-color: #9aacb8;
@@ -6670,7 +6670,6 @@ body {
 .i-ching-logo {
   -webkit-animation: i-ching-logo-spin infinite 60s linear;
           animation: i-ching-logo-spin infinite 60s linear;
-  /* height: 40vmin; */
   pointer-events: none;
 }
 
@@ -6702,23 +6701,6 @@ body {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
-}
-
-.question-header.shut {
-  opacity: 0;
-}
-
-.question-header {
-  transition: opacity 600ms ease-in;
-  opacity: 1;
-}
-
-.hex-number {
-  border-radius: 50%;
-}
-
-.hexagram-glyph {
-  fill: mistyrose;
 }
 
 h1 {

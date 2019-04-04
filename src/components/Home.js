@@ -7,12 +7,12 @@ class Home extends React.Component {
         return (
             <>
                 <Header
-                    heading="i ching for beginners"
+                    heading="I Ching for Beginners"
                     subHeading="guidance from the ancient oracle"
                 />
                 <div className="main-col bg-frost opacity-75 p-4 pb-6 mx-4 mt-2 md:mt-8 rounded">
                     <p className="text-grey-dark text-2xl font-bold tracking-normal">
-                        What is the I Ching and can it benefit me?
+                        What is the I Ching and how can it benefit me?
                     </p>
                     <p className="text-grey-darkest text-lg mt-4 leading-normal">
                         The I Ching is an ancient Chinese divination text dating
@@ -41,7 +41,7 @@ class Home extends React.Component {
                             className="btn btn-submit mt-6"
                             to="/build-your-hexagram"
                         >
-                            begin
+                            Start
                         </Link>
                     </p>
 

@@ -80,7 +80,7 @@ class App extends Component {
         return (
             <>
                 <Header
-                    heading="i ching for beginners"
+                    heading="I Ching for Beginners"
                     subHeading="guidance from the ancient oracle"
                 />
                 <div className="md:flex md:flex-wrap bg-lead mt-8">
