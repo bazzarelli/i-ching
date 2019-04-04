@@ -1,20 +1,60 @@
 import React from 'react';
+import classNames from 'classnames';
 
 class CoinToss extends React.Component {
+    handleClicks = () => {
+        this.props.countClicks(Number(this.props.currentClicks) + 1);
+
+        if (this.props.currentClicks === 5) {
+            this.tossCoin();
+        }
+    };
+
     tossCoin = () => {
         const currentToss = Math.floor(Math.random() * 64) + 1;
         this.props.addHex(currentToss);
     };
 
     render() {
+        let currentClicks = Number(this.props.currentClicks);
+
+        const counterClasses = classNames('click-counter', {
+            visible: currentClicks,
+            hidden: !currentClicks || currentClicks === 6,
+        });
+
+        const builderVisibility = {
+            display: currentClicks === 6 ? 'none' : 'inline-block',
+        };
+
         return (
-            <button
-                onClick={this.tossCoin}
-                className="mx-4 flex-1 bg-grey-dark text-grey-lighter hover:bg-orange-light hover:text-slate py-2 px-4 my-2 rounded focus:outline-none focus:shadow-outline"
-                type="button"
-            >
-                coin toss
-            </button>
+            <div>
+                <p
+                    style={builderVisibility}
+                    className="text-grey-darker text-md mt-4 leading-normal"
+                >
+                    Now that you have your question formulated, it's time to
+                    build your hexagram.
+                </p>
+                <p
+                    style={builderVisibility}
+                    className="text-grey-darker text-md mt-4 leading-normal"
+                >
+                    Click the 'build hexagram' button six times to generate your
+                    hexagram.
+                </p>
+                <button
+                    style={builderVisibility}
+                    onClick={this.handleClicks}
+                    className="btn btn-submit mt-6"
+                    type="button"
+                >
+                    build hexagram
+                </button>
+                <span className={counterClasses}>
+                    {this.props.currentClicks}
+                </span>
+            </div>
         );
     }
 }

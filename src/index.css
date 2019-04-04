@@ -496,6 +496,55 @@ table {
   border-collapse: collapse;
 }
 
+/* @import "/styles/components/forms"; */
+
+.btn {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  border-radius: .25rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(52, 144, 220, .5);
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn-submit {
+  background-color: #8795a1;
+  color: #dae1e7;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #8795a1;
+}
+
+.btn-submit:hover {
+  background-color: #faad63;
+  color: #f6993f;
+  border-color: #606f7b;
+}
+
+.click-counter {
+  display: inline-block;
+  margin-left: 1rem;
+  background-color: #faad63;
+  border-radius: 9999px;
+  height: 2rem;
+  width: 2rem;
+  padding-top: .5rem;
+  text-align: center;
+}
+
 .list-reset {
   list-style: none;
   padding: 0;
@@ -6606,7 +6655,16 @@ body {
 
 .main-col {
   background-image: linear-gradient(#dde2e3 0%, #9aacb8 100%);
+  position: relative;
   /* background: radial-gradient(ellipse at center, rgba(154, 182, 210, 0.9) 20%, rgba(221, 226, 227, 0.75) 100%); */
+}
+
+.btn-submit {
+  background-image: linear-gradient(180deg, #9aacb8 0%, rgb(108, 121, 129) 100%);
+}
+
+.btn-submit:hover {
+  background-image: linear-gradient(180deg, rgb(108, 121, 129) 50%, #9aacb8 100%);
 }
 
 .i-ching-logo {
@@ -6614,6 +6672,12 @@ body {
           animation: i-ching-logo-spin infinite 60s linear;
   /* height: 40vmin; */
   pointer-events: none;
+}
+
+.reset-button {
+  position: absolute;
+  bottom: 2rem;
+  left: 2 rem;
 }
 
 @-webkit-keyframes i-ching-logo-spin {

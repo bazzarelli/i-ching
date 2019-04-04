@@ -4,20 +4,20 @@ self.__precacheManifest = [
     "url": "/i-ching/static/media/4.1073b0a2.svg"
   },
   {
-    "revision": "7662214a467198e86a33",
-    "url": "/i-ching/static/css/main.e317c584.chunk.css"
+    "revision": "c8dd62a3484b60870c8d",
+    "url": "/i-ching/static/css/main.9b4b9bbe.chunk.css"
   },
   {
-    "revision": "8052c205f9cc2e85d1a1",
-    "url": "/i-ching/static/js/runtime~main.6dba80b0.js"
+    "revision": "1b5ca87e12712a0ea4ee",
+    "url": "/i-ching/static/js/runtime~main.39fde579.js"
   },
   {
-    "revision": "fe70bff10f1457ad996b",
-    "url": "/i-ching/static/js/2.4f1b443b.chunk.js"
+    "revision": "572be71929781f1d7a93",
+    "url": "/i-ching/static/js/2.dc2f6e4b.chunk.js"
   },
   {
-    "revision": "6afee50cc9f2be56f956a6ffa38c72f5",
-    "url": "/i-ching/static/media/0.6afee50c.svg"
+    "revision": "4f82242fdf63707e8a60b854f2c5e6d5",
+    "url": "/i-ching/static/media/0.4f82242f.svg"
   },
   {
     "revision": "f088eb2157ee8a8c87eb79a1a11334c4",
@@ -152,8 +152,8 @@ self.__precacheManifest = [
     "url": "/i-ching/static/media/39.a4edf841.svg"
   },
   {
-    "revision": "7662214a467198e86a33",
-    "url": "/i-ching/static/js/main.385b27e1.chunk.js"
+    "revision": "c8dd62a3484b60870c8d",
+    "url": "/i-ching/static/js/main.b80ed998.chunk.js"
   },
   {
     "revision": "98c6355097cbf2858f0a9420727f0119",
@@ -304,7 +304,7 @@ self.__precacheManifest = [
     "url": "/i-ching/static/media/yin-yang.bf08f192.svg"
   },
   {
-    "revision": "8a4f3c6f46305969beb8219f58a5ad60",
+    "revision": "e57b5c19cdbdd07d30edba947e1b0ca9",
     "url": "/i-ching/index.html"
   }
 ];

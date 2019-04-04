@@ -3,6 +3,7 @@ import FormulatedQuestion from './FormulatedQuestion';
 import HexBuilder from './HexBuilder';
 import QuestionTextarea from './QuestionTextarea';
 import hexes from '../data/hexes';
+import Header from './Header';
 
 class App extends Component {
     constructor(props) {
@@ -10,12 +11,18 @@ class App extends Component {
         this.state = {
             hexLibrary: hexes,
             hexagram: 0,
+            clickCount: 0,
         };
     }
 
     componentDidMount() {
-        const localStorageQuestion = localStorage.getItem('question');
-        const localStorageHexagram = localStorage.getItem('hexagram');
+        const localStorageQuestion = localStorage.getItem('question')
+            ? localStorage.getItem('question')
+            : '';
+        const localStorageHexagram = Number(localStorage.getItem('hexagram'));
+        const localStorageClickCount = Number(
+            localStorage.getItem('clickCount')
+        );
 
         if (localStorageHexagram) {
             this.setState({ hexagram: localStorageHexagram });
@@ -23,15 +30,19 @@ class App extends Component {
         if (localStorageQuestion) {
             this.setState({ question: localStorageQuestion });
         }
+        if (localStorageClickCount) {
+            this.setState({ clickCount: localStorageClickCount });
+        }
     }
 
     componentDidUpdate() {
         localStorage.setItem('question', this.state.question);
         localStorage.setItem('hexagram', this.state.hexagram);
+        localStorage.setItem('clickCount', this.state.clickCount);
     }
 
     clearUserState = items => {
-        const { question, hexagram } = items;
+        const { question, hexagram, clickCount } = items;
 
         if (question.clear) {
             localStorage.removeItem('question');
@@ -40,6 +51,10 @@ class App extends Component {
         if (hexagram.clear) {
             localStorage.removeItem('hexagram');
             this.setState({ hexagram: '' });
+        }
+        if (clickCount.clear) {
+            localStorage.removeItem('clickCount');
+            this.setState({ clickCount: 0 });
         }
     };
 
@@ -55,29 +70,43 @@ class App extends Component {
         this.setState({ hexagram });
     };
 
+    countClicks = n => {
+        let clickCount = { ...this.state.clickCount };
+        clickCount = n;
+        this.setState({ clickCount });
+    };
+
     render() {
         return (
-            <div className="md:flex md:flex-wrap bg-lead">
-                <div className="main-col md:flex-1 bg-frost opacity-75 p-4 pb-6 m-2 rounded">
-                    <QuestionTextarea
-                        logQuestion={this.logQuestion}
-                        question={this.state.question}
-                    />
-                    <FormulatedQuestion
-                        addHex={this.addHex}
-                        reset={this.clearUserState}
-                        question={this.state.question}
-                        hexId={this.state.hexagram}
-                    />
+            <>
+                <Header
+                    heading="i ching for beginners"
+                    subHeading="guidance from the ancient oracle"
+                />
+                <div className="md:flex md:flex-wrap bg-lead mt-8">
+                    <div className="main-col md:flex-1 bg-frost opacity-75 p-4 pb-6 mx-2 rounded">
+                        <QuestionTextarea
+                            logQuestion={this.logQuestion}
+                            question={this.state.question}
+                        />
+                        <FormulatedQuestion
+                            addHex={this.addHex}
+                            reset={this.clearUserState}
+                            question={this.state.question}
+                            hexId={this.state.hexagram}
+                            currentClicks={this.state.clickCount}
+                            countClicks={this.countClicks}
+                        />
+                    </div>
+                    <div className="main-col md:flex-1 text-grey-darker text-center bg-frost opacity-75 p-4 pb-6 mx-2 rounded">
+                        <HexBuilder
+                            currentHexId={this.state.hexagram}
+                            allHexes={this.state.hexLibrary}
+                            question={this.state.question}
+                        />
+                    </div>
                 </div>
-                <div className="main-col md:flex-1 text-grey-darker text-center bg-frost opacity-75 p-4 pb-6 m-2 rounded">
-                    <HexBuilder
-                        currentHexId={this.state.hexagram}
-                        allHexes={this.state.hexLibrary}
-                        question={this.state.question}
-                    />
-                </div>
-            </div>
+            </>
         );
     }
 }

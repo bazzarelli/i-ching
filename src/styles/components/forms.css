@@ -1,0 +1,12 @@
+.btn {
+    @apply py-2 px-4 my-2 rounded;
+}
+.btn:focus {
+    @apply outline-none shadow-outline;
+}
+.btn-submit {
+    @apply bg-grey-dark text-grey-lighter;
+}
+.btn-submit:hover {
+    @apply bg-orange-light text-slate;
+}
