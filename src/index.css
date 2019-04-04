@@ -536,7 +536,7 @@ table {
 
 .click-counter {
   display: inline-block;
-  margin-left: 1rem;
+  margin-left: 2rem;
   background-color: #faad63;
   border-radius: 9999px;
   height: 2rem;
@@ -6675,8 +6675,8 @@ body {
 
 .reset-button {
   position: absolute;
-  bottom: 2rem;
-  left: 2 rem;
+  bottom: .75rem;
+  right: 1.2rem;
 }
 
 @-webkit-keyframes i-ching-logo-spin {

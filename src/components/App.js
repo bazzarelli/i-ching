@@ -83,8 +83,8 @@ class App extends Component {
                     heading="I Ching for Beginners"
                     subHeading="guidance from the ancient oracle"
                 />
-                <div className="md:flex md:flex-wrap bg-lead mt-8">
-                    <div className="main-col md:flex-1 bg-frost opacity-75 p-4 pb-6 mx-2 rounded">
+                <div className="md:flex md:flex-wrap bg-lead m-0 md:mt-8">
+                    <div className="main-col md:flex-1 bg-frost opacity-75 p-4 pb-6 m-0 md:mx-2 rounded">
                         <QuestionTextarea
                             logQuestion={this.logQuestion}
                             question={this.state.question}
@@ -98,7 +98,7 @@ class App extends Component {
                             countClicks={this.countClicks}
                         />
                     </div>
-                    <div className="main-col md:flex-1 text-grey-darker text-center bg-frost opacity-75 p-4 pb-6 mx-2 rounded">
+                    <div className="main-col md:flex-1 text-grey-darker text-center bg-frost opacity-75 p-4 pb-6 m-0 md:mx-2 rounded">
                         <HexBuilder
                             currentHexId={this.state.hexagram}
                             allHexes={this.state.hexLibrary}

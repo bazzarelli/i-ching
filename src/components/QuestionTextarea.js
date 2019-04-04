@@ -47,7 +47,7 @@ class QuestionTextarea extends React.Component {
                 </form>
                 <p
                     style={formVisibility}
-                    className="text-grey-darker text-md mt-4 leading-normal"
+                    className="text-grey-darkest text-md mt-4 leading-normal"
                 >
                     Open-ended questions are more suited to the I Ching language
                     and style. Something like "Should I change my job?" may be

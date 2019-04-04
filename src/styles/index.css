@@ -17,7 +17,7 @@
     @apply bg-orange-light text-orange border-grey-darker;
 }
 .click-counter {
-    @apply inline-block ml-4 bg-orange-light rounded-full h-8 w-8 pt-2 text-center;
+    @apply inline-block ml-8 bg-orange-light rounded-full h-8 w-8 pt-2 text-center;
 }
 
 
@@ -47,8 +47,8 @@ body {
 }
 .reset-button {
     position: absolute;
-    bottom: 2rem;
-    left: 2 rem;
+    bottom: 0.75rem;
+    right: 1.2rem;
 }
 @keyframes i-ching-logo-spin {
     from {

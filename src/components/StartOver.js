@@ -18,7 +18,7 @@ class StartOver extends React.Component {
                 className="reset-button hover:underline"
                 type="button"
             >
-                start over
+                reset
             </button>
         );
     }
