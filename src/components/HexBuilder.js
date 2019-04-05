@@ -18,13 +18,23 @@ class HexBuilder extends React.Component {
                 <p className="rounded w-8 h-8 flex items-center justify-center bg-grey-lighter text-grey-darkest font-semibold border border-grey">
                     {currentId || '?'}
                 </p>
-                <h2 className="text-slate">{hexData.name}</h2>
+                <h2 className="text-slate mb-2">{hexData.name}</h2>
                 <img
                     className={hexagramClasses}
                     src={imgSrc}
                     alt={'hexagram ' + this.props.currentHexId}
                 />
-                <p className="text-slate">{hexData.desc}</p>
+                <p className="text-slate mt-4 mb-4 text-xl">{hexData.desc}</p>
+                <p className="text-slate mt-4 leading-normal text-left text-lg">
+                    {hexData.overview.split('\n').map((item, key) => {
+                        return (
+                            <span key={key}>
+                                {item}
+                                <br className="leading-loose" />
+                            </span>
+                        );
+                    })}
+                </p>
             </div>
         );
     }

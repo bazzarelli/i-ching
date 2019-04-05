@@ -520,9 +520,22 @@ table {
   text-decoration: none;
 }
 
+.btn-start {
+  background-color: #8795a1;
+  color: #22292f;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #3d4852;
+}
+
+.btn-start:hover {
+  background-color: #faad63;
+  border-color: #8795a1;
+}
+
 .btn-submit {
   background-color: #8795a1;
-  color: #dae1e7;
+  color: #fff;
   border-width: 2px;
   border-style: solid;
   border-color: #8795a1;

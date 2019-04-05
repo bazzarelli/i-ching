@@ -1,3 +1,10 @@
+        overview: [
+            'This is the kua of creating yourself as an individual or of creating some idea that you have conceived. Receiving this kua is indeed a blessing, for this is the kua of Heaven, in which all the lines are strong, good, and virtuous, and it guarantees sublime success from the primal depths of the Universe, provided that you act in accordance with its provisions. It is rare to receive this kua as an answer, but when you do, you are faced with an opportunity of the greatest magnitude. When your success is guaranteed from the primal depths of the Universe, it means that even the spiritual world will come to your aid and that blessings will be heaped upon you. Confucius, the great Chinese sage and I Ching scholar, said that when Heaven blesses us, it helps us, and to be helped by Heaven is to be helped indeed.',
+            'However, to achieve the success you seek you must act with the utmost integrity and honor. This means putting yourself in accord with the six lines of this kua, all of which are pure, light-giving, powerful, and just.',
+            'If you do not, the enormous potential promised by this kua will not be achieved. Examine yourself closely to see if you have any bad habits or bad intentions that could potentially hurt yourself or your plan. If you find areas in your character that can be improved, start the corrective work immediately. That is the key to unlocking your full potential and the full potential of your plan or of what you are conceiving.',
+            'Because this kua unfolds over time, it also requires perseverance and endurance: perseverance in a course of action that is right, good, and just; and endurance to see things through to the end. If you act with complete integrity and honor, you will bring into existence the full power of this kua and experience sublime success. You will fulfill this kua’s great promise: you will mount to the skies of success as though on the wings of six dragons!',
+        ],
+
 // className="bg-grey-dark text-grey-lighter hover:bg-orange-light hover:text-slate py-2 px-4 my-2 rounded focus:outline-none focus:shadow-outline"
 
 const divStyle = {
