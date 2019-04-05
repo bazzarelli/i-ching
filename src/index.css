@@ -556,6 +556,14 @@ table {
   width: 2rem;
   padding-top: .5rem;
   text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08);
+}
+
+.para-intro {
+  color: #3d4852;
+  font-size: 1.125rem;
+  margin-top: 1rem;
+  line-height: 1.5;
 }
 
 .list-reset {
@@ -6672,6 +6680,10 @@ body {
   /* background: radial-gradient(ellipse at center, rgba(154, 182, 210, 0.9) 20%, rgba(221, 226, 227, 0.75) 100%); */
 }
 
+.para {
+  text-indent: 2rem;
+}
+
 .btn-submit {
   background-image: linear-gradient(180deg, #9aacb8 0%, rgb(108, 121, 129) 100%);
 }
@@ -6684,12 +6696,6 @@ body {
   -webkit-animation: i-ching-logo-spin infinite 60s linear;
           animation: i-ching-logo-spin infinite 60s linear;
   pointer-events: none;
-}
-
-.reset-button {
-  position: absolute;
-  bottom: .75rem;
-  right: 1.2rem;
 }
 
 @-webkit-keyframes i-ching-logo-spin {

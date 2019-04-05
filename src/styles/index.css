@@ -23,9 +23,11 @@
     @apply bg-orange-light text-orange border-grey-darker;
 }
 .click-counter {
-    @apply inline-block ml-8 bg-orange-light rounded-full h-8 w-8 pt-2 text-center;
+    @apply inline-block ml-8 bg-orange-light rounded-full h-8 w-8 pt-2 text-center shadow-md;
 }
-
+.para-intro {
+    @apply text-grey-darkest text-lg mt-4 leading-normal;
+}
 
 @tailwind utilities;
 
@@ -41,6 +43,9 @@ body {
     position: relative;
     /* background: radial-gradient(ellipse at center, rgba(154, 182, 210, 0.9) 20%, rgba(221, 226, 227, 0.75) 100%); */
 }
+.para {
+    text-indent: 2rem;
+}
 .btn-submit {
     background-image: linear-gradient(180deg,#9AACB8 0%,rgb(108, 121, 129) 100%);
 }
@@ -50,11 +55,6 @@ body {
 .i-ching-logo {
     animation: i-ching-logo-spin infinite 60s linear;
     pointer-events: none;
-}
-.reset-button {
-    position: absolute;
-    bottom: 0.75rem;
-    right: 1.2rem;
 }
 @keyframes i-ching-logo-spin {
     from {

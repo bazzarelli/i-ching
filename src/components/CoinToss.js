@@ -23,30 +23,34 @@ class CoinToss extends React.Component {
             hidden: !currentClicks || currentClicks === 6,
         });
 
-        const builderVisibility = {
+        const buttonVisibility = {
             display: currentClicks === 6 ? 'none' : 'inline-block',
+        };
+
+        const paraVisibility = {
+            display: currentClicks === 6 ? 'none' : 'block',
         };
 
         return (
             <div>
                 <p
-                    style={builderVisibility}
+                    style={paraVisibility}
                     className="text-grey-darker text-md mt-4 leading-normal"
                 >
                     Now that you have your question formulated, it's time to
                     build your hexagram.
                 </p>
                 <p
-                    style={builderVisibility}
+                    style={paraVisibility}
                     className="text-grey-darker text-md mt-4 leading-normal"
                 >
                     Click the 'build hexagram' button six times to generate your
                     hexagram.
                 </p>
                 <button
-                    style={builderVisibility}
+                    style={buttonVisibility}
                     onClick={this.handleClicks}
-                    className="btn btn-submit mt-6"
+                    className="btn btn-submit mt-4"
                     type="button"
                 >
                     build hexagram

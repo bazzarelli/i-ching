@@ -15,7 +15,7 @@ class StartOver extends React.Component {
         return (
             <button
                 onClick={this.clearStorage}
-                className="reset-button hover:underline"
+                className="hover:underline float-right pr-1"
                 type="button"
             >
                 reset

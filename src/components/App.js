@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FormulatedQuestion from './FormulatedQuestion';
-import HexBuilder from './HexBuilder';
+import Hexagram from './Hexagram';
 import QuestionTextarea from './QuestionTextarea';
 import hexes from '../data/hexes';
 import Header from './Header';
@@ -12,6 +12,8 @@ class App extends Component {
             hexLibrary: hexes,
             hexagram: 0,
             clickCount: 0,
+            heading: 'I Ching for Beginners',
+            subHeading: 'guidance from the ancient oracle',
         };
     }
 
@@ -80,11 +82,11 @@ class App extends Component {
         return (
             <>
                 <Header
-                    heading="I Ching for Beginners"
-                    subHeading="guidance from the ancient oracle"
+                    heading={this.state.heading}
+                    subHeading={this.state.subHeading}
                 />
-                <div className="md:flex md:flex-wrap bg-lead m-0 md:mt-8">
-                    <div className="main-col md:flex-1 bg-frost opacity-75 p-4 pb-6 m-0 md:mx-2 rounded">
+                <>
+                    <div className="main-col opacity-75 p-4 pb-6">
                         <QuestionTextarea
                             logQuestion={this.logQuestion}
                             question={this.state.question}
@@ -98,14 +100,14 @@ class App extends Component {
                             countClicks={this.countClicks}
                         />
                     </div>
-                    <div className="main-col md:flex-1 text-grey-darker text-center bg-frost opacity-75 p-4 pb-6 m-0 md:mx-2 rounded">
-                        <HexBuilder
+                    <div className="main-col text-grey-darker text-center bg-frost opacity-75 p-4 pb-6">
+                        <Hexagram
                             currentHexId={this.state.hexagram}
                             allHexes={this.state.hexLibrary}
                             question={this.state.question}
                         />
                     </div>
-                </div>
+                </>
             </>
         );
     }
