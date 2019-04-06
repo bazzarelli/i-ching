@@ -23,7 +23,7 @@
     @apply bg-orange-light text-orange border-grey-darker;
 }
 .click-counter {
-    @apply inline-block ml-8 bg-orange-light rounded-full h-8 w-8 pt-2 text-center shadow-md;
+    @apply inline-block ml-10 bg-orange-light text-2xl font-mono rounded-full h-10 w-10 pt-2 text-center shadow-md font-black;
 }
 .para-intro {
     @apply text-grey-darkest text-lg mt-4 leading-normal;

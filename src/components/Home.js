@@ -10,7 +10,7 @@ class Home extends React.Component {
                     heading="I Ching for Beginners"
                     subHeading="guidance from the ancient oracle"
                 />
-                <div className="main-col bg-frost opacity-75 p-8 md:p-4 pb-6 m-0 md:mx-4 md:mt-8 md:rounded">
+                <div className="main-col bg-frost opacity-75 p-8 md:p-4 pb-6">
                     <p className="text-grey-dark text-2xl font-bold tracking-normal">
                         What is the I Ching and how can it benefit me?
                     </p>

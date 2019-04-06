@@ -42,7 +42,7 @@ class CoinToss extends React.Component {
                 </p>
                 <p
                     style={paraVisibility}
-                    className="text-grey-darker text-md mt-4 leading-normal"
+                    className="text-grey-darker text-md mt-2 leading-normal"
                 >
                     Click the 'build hexagram' button six times to generate your
                     hexagram.

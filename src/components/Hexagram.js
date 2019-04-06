@@ -22,9 +22,9 @@ class Hexagram extends React.Component {
                 <img
                     className={hexagramClasses}
                     src={imgSrc}
-                    alt={'hexagram ' + this.props.currentHexId}
+                    title={'hexagram ' + this.props.currentHexId}
                 />
-                <p className="text-slate mt-4 mb-4 text-xl">{hexData.desc}</p>
+                <p className="text-slate mt-4 mb-6 text-xl">{hexData.desc}</p>
                 <div className="text-slate mt-4 leading-normal text-left text-lg">
                     {hexData.overview.split('\n').map((item, key) => {
                         return (
