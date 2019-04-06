@@ -46,9 +46,9 @@ class QuestionTextarea extends React.Component {
                     </button>
                     <p className="text-grey-dark text-md mt-4 leading-normal">
                         Open-ended questions are more suited to the I Ching
-                        interpretation. Something like "Should I change my job?"
-                        may be better phrased "How would my life be affected if
-                        I changed jobs?"
+                        interpretation. A yes/no question like, "Should I change
+                        my job?" would be better phrased, "How would my life be
+                        affected if I changed jobs?"
                     </p>
                 </form>
             </>

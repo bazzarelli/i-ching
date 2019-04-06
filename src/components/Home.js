@@ -23,17 +23,15 @@ class Home extends React.Component {
                     </p>
                     <p className="para-intro">
                         Anyone can use the I Ching by asking a question and
-                        generating a hexagram via methods such as tossing three
-                        coins six different times. Once you have your hexagram
+                        generating a hexagram via methods such as tossing coins
+                        or drawing yarrow stalks. Once you have your hexagram
                         symbol (also referred to as the kua) you can use it to
-                        reference the hexagram interpretation in a book* as it
-                        relates to your question.
+                        reference the hexagram interpretation from a book*.
                     </p>
                     <p className="para-intro">
                         Why bother doing this? The reason would be to gain
                         insight into a decision beyond what you have already
-                        considered. The interpretation text may provide a view
-                        into your own unconscious wisdom.
+                        considered.
                     </p>
                     <p>
                         <Link
@@ -45,8 +43,7 @@ class Home extends React.Component {
                     </p>
 
                     <p className="text-xs text-grey-darker mt-6">
-                        *note: I am using 'I Ching The Book of Answers' by Wu
-                        Wei.
+                        *I am using 'I Ching The Book of Answers' by Wu Wei.
                     </p>
                 </div>
             </>
