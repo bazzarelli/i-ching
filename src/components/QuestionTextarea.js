@@ -6,7 +6,6 @@ class QuestionTextarea extends React.Component {
     askQuestion = event => {
         event.preventDefault();
         const q = this.questionRef.current.value;
-        console.log('question: ', q);
         this.props.logQuestion(q);
     };
 
@@ -31,7 +30,7 @@ class QuestionTextarea extends React.Component {
                         className="block text-grey-darker text-md mb-2"
                         htmlFor="question"
                     >
-                        Begin by asking your question
+                        Begin by tying your question into the text area below:
                     </label>
                     <textarea
                         id="question"
@@ -42,7 +41,7 @@ class QuestionTextarea extends React.Component {
                     jobs?"
                     />
                     <button className="btn btn-submit mt-4" type="submit">
-                        save question
+                        save
                     </button>
                     <p className="text-grey-dark text-md mt-4 leading-normal">
                         Open-ended questions are more suited to the I Ching

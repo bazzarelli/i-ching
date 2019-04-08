@@ -43,7 +43,8 @@ class Home extends React.Component {
                     </p>
 
                     <p className="text-xs text-grey-darker mt-6">
-                        *I am using 'I Ching The Book of Answers' by Wu Wei.
+                        *The book used here is 'I Ching The Book of Answers' by
+                        Wu Wei.
                     </p>
                 </div>
             </>
