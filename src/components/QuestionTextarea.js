@@ -27,10 +27,10 @@ class QuestionTextarea extends React.Component {
                     onSubmit={this.askQuestion}
                 >
                     <label
-                        className="block text-grey-darker text-md mb-2"
+                        className="block text-grey-darker text-md mb-2 ml-1"
                         htmlFor="question"
                     >
-                        Begin by tying your question into the text area below:
+                        Begin by typing your question into the text area below
                     </label>
                     <textarea
                         id="question"
@@ -43,7 +43,7 @@ class QuestionTextarea extends React.Component {
                     <button className="btn btn-submit mt-4" type="submit">
                         save
                     </button>
-                    <p className="text-grey-dark text-md mt-4 leading-normal">
+                    <p className="text-grey-dark text-md mt-4 ml-1 leading-normal">
                         Open-ended questions are more suited to the I Ching
                         interpretation. A yes/no question like, "Should I change
                         my job?" would be better phrased, "How would my life be
