@@ -1,7 +1,6 @@
 import React from 'react';
 import CoinToss from './CoinToss';
 import classNames from 'classnames';
-import StartOver from './StartOver';
 
 class FormulatedQuestion extends React.Component {
     render() {
@@ -17,11 +16,6 @@ class FormulatedQuestion extends React.Component {
             hidden: !hasQuestion,
         });
 
-        const resetButtonClasses = classNames({
-            visible: hasQuestion,
-            hidden: !hasQuestion,
-        });
-
         return (
             <div>
                 <header className={headerClasses}>
@@ -32,14 +26,13 @@ class FormulatedQuestion extends React.Component {
                 <span className={coinTossButtonClasses}>
                     <CoinToss
                         question={this.props.question}
-                        addHex={this.props.addHex}
-                        countClicks={this.props.countClicks}
-                        currentClicks={this.props.currentClicks}
+                        addLineToHex={this.props.addLineToHex}
+                        hexagram={this.props.hexagram}
+                        setHexagramComplete={this.props.setHexagramComplete}
+                        hexIsReady={this.props.hexIsReady}
+                        reset={this.props.reset}
                     />
                 </span>
-                <div className={resetButtonClasses}>
-                    <StartOver reset={this.props.reset} />
-                </div>
             </div>
         );
     }

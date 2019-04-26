@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import FormulatedQuestion from './FormulatedQuestion';
-import Hexagram from './Hexagram';
-import QuestionTextarea from './QuestionTextarea';
+import InputQuestion from './InputQuestion';
 import hexes from '../data/hexes';
 import Header from './Header';
 
@@ -10,10 +9,10 @@ class App extends Component {
         super(props);
         this.state = {
             hexLibrary: hexes,
-            hexagram: 0,
-            clickCount: 0,
-            heading: 'I Ching for Beginners',
-            subHeading: 'guidance from the ancient oracle',
+            hexagram: [],
+            hexagramCompleted: false,
+            hexagramId: 0,
+            question: '',
         };
     }
 
@@ -21,9 +20,8 @@ class App extends Component {
         const localStorageQuestion = localStorage.getItem('question')
             ? localStorage.getItem('question')
             : '';
-        const localStorageHexagram = Number(localStorage.getItem('hexagram'));
-        const localStorageClickCount = Number(
-            localStorage.getItem('clickCount')
+        const localStorageHexagram = JSON.parse(
+            localStorage.getItem('hexagram')
         );
 
         if (localStorageHexagram) {
@@ -32,19 +30,15 @@ class App extends Component {
         if (localStorageQuestion) {
             this.setState({ question: localStorageQuestion });
         }
-        if (localStorageClickCount) {
-            this.setState({ clickCount: localStorageClickCount });
-        }
     }
 
     componentDidUpdate() {
         localStorage.setItem('question', this.state.question);
-        localStorage.setItem('hexagram', this.state.hexagram);
-        localStorage.setItem('clickCount', this.state.clickCount);
+        localStorage.setItem('hexagram', JSON.stringify(this.state.hexagram));
     }
 
     clearUserState = items => {
-        const { question, hexagram, clickCount } = items;
+        const { question, hexagram } = items;
 
         if (question.clear) {
             localStorage.removeItem('question');
@@ -54,10 +48,6 @@ class App extends Component {
             localStorage.removeItem('hexagram');
             this.setState({ hexagram: '' });
         }
-        if (clickCount.clear) {
-            localStorage.removeItem('clickCount');
-            this.setState({ clickCount: 0 });
-        }
     };
 
     logQuestion = q => {
@@ -66,47 +56,60 @@ class App extends Component {
         this.setState({ question });
     };
 
-    addHex = toss => {
-        let hexagram = { ...this.state.hexagram };
-        hexagram = toss;
-        this.setState({ hexagram });
+    addLineToHex = lineId => {
+        console.log('lineId', lineId);
+        console.log('this.state.hexagram before', this.state.hexagram);
+        this.setState({
+            hexagram: [...this.state.hexagram, lineId],
+        });
+        console.log('this.state.hexagram after', this.state.hexagram);
     };
 
+    /*
     countClicks = n => {
         let clickCount = { ...this.state.clickCount };
         clickCount = n;
         this.setState({ clickCount });
     };
+*/
+
+    setHexagramComplete = hexComplete => {
+        if (hexComplete) {
+            this.setState({ hexagramCompleted: true });
+        }
+    };
+    getHexId = hexagram => {
+        // use the hex lib to match array sequence
+        // from the completed toss
+    };
 
     render() {
         return (
             <>
-                <Header
-                    heading={this.state.heading}
-                    subHeading={this.state.subHeading}
-                />
+                <Header />
                 <>
                     <div className="main-col opacity-75 p-4 pb-6">
-                        <QuestionTextarea
+                        <InputQuestion
                             logQuestion={this.logQuestion}
                             question={this.state.question}
                         />
                         <FormulatedQuestion
-                            addHex={this.addHex}
                             reset={this.clearUserState}
                             question={this.state.question}
-                            hexId={this.state.hexagram}
-                            currentClicks={this.state.clickCount}
-                            countClicks={this.countClicks}
+                            allHexes={this.state.hexLibrary}
+                            addLineToHex={this.addLineToHex}
+                            hexagram={this.state.hexagram}
+                            setHexagramComplete={this.setHexagramComplete}
+                            hexIsReady={this.state.hexagramCompleted}
                         />
                     </div>
-                    <div className="main-col text-grey-darker text-center bg-frost opacity-75 p-4 pb-6">
+                    {/* <div className="main-col text-grey-darker text-center bg-frost opacity-75 p-4 pb-6">
                         <Hexagram
                             currentHexId={this.state.hexagram}
                             allHexes={this.state.hexLibrary}
                             question={this.state.question}
                         />
-                    </div>
+                    </div> */}
                 </>
             </>
         );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class QuestionTextarea extends React.Component {
+class InputQuestion extends React.Component {
     questionRef = React.createRef();
 
     askQuestion = event => {
@@ -23,7 +23,7 @@ class QuestionTextarea extends React.Component {
             <>
                 <form
                     style={formVisibility}
-                    className="bg-blue-lightest rounded p-6 border border-solid border-blue-lighter shadow-lg"
+                    className="p6"
                     onSubmit={this.askQuestion}
                 >
                     <label
@@ -40,10 +40,15 @@ class QuestionTextarea extends React.Component {
                         placeholder="e.g. How would my life be affected if I changed
                     jobs?"
                     />
-                    <button className="btn btn-submit mt-4" type="submit">
-                        save
-                    </button>
-                    <p className="text-grey-dark text-md mt-4 ml-1 leading-normal">
+                    <p className="flex items-center md:items-start">
+                        <button
+                            className="btn btn-action mt-4 text-center w-full md:w-1/5"
+                            type="submit"
+                        >
+                            Save
+                        </button>
+                    </p>
+                    <p className="text-grey-darker text-md mt-4 ml-1 leading-normal">
                         Open-ended questions are more suited to the I Ching
                         interpretation. A yes/no question like, "Should I change
                         my job?" would be better phrased, "How would my life be
@@ -55,4 +60,4 @@ class QuestionTextarea extends React.Component {
     }
 }
 
-export default QuestionTextarea;
+export default InputQuestion;

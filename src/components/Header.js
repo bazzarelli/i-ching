@@ -9,11 +9,11 @@ class Header extends React.Component {
                         className="block no-underline text-4xl md:text-5xl text-lead mt-3 text-center"
                         to="/"
                     >
-                        {this.props.heading}
+                        I Ching for Beginners
                     </Link>
                 </h1>
                 <h3 className="text-base md:text-xl text-center font-thin text-grey-dark mt-4 tracking-wide">
-                    {this.props.subHeading}
+                    guidance from the ancient oracle
                 </h3>
             </header>
         );

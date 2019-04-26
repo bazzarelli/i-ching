@@ -17,7 +17,7 @@ class Hexagram extends React.Component {
         return (
             <>
                 <p className="rounded w-8 h-8 flex items-center justify-center bg-grey-lighter text-grey-darkest font-semibold border border-grey">
-                    {currentId || '?'}
+                    {currentId || '☯'}
                 </p>
                 <h2 className="text-slate mb-2">{name}</h2>
                 <img

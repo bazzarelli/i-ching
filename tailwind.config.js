@@ -24,7 +24,7 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-let defaultConfig = require('tailwindcss/defaultConfig')()
+let defaultConfig = require('tailwindcss/defaultConfig')();
 
 /*
 |-------------------------------------------------------------------------------
@@ -56,8 +56,6 @@ let colors = {
     slate: '#2B4251',
     'slate-blue': '#4a5669',
     creosote: '#3E323C',
-    'coin-orange': '#ff7919',
-    'coin-green': '#12b209',
 
     black: '#22292f',
     'grey-darkest': '#3d4852',
@@ -140,7 +138,7 @@ let colors = {
     'pink-light': '#fa7ea8',
     'pink-lighter': '#ffbbca',
     'pink-lightest': '#ffebef',
-}
+};
 
 module.exports = {
     /*
@@ -962,4 +960,4 @@ module.exports = {
         important: false,
         separator: ':',
     },
-}
+};

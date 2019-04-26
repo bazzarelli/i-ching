@@ -5,7 +5,6 @@ class StartOver extends React.Component {
         const resetAll = {
             question: { clear: true },
             hexagram: { clear: true },
-            clickCount: { clear: true },
         };
 
         this.props.reset(resetAll);
@@ -13,13 +12,15 @@ class StartOver extends React.Component {
 
     render() {
         return (
-            <button
-                onClick={this.clearStorage}
-                className="hover:underline float-right pr-1"
-                type="button"
-            >
-                reset
-            </button>
+            <div>
+                <button
+                    onClick={this.clearStorage}
+                    className="btn btn-cancel"
+                    type="button"
+                >
+                    reset
+                </button>
+            </div>
         );
     }
 }

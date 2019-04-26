@@ -6,10 +6,7 @@ class Home extends React.Component {
     render() {
         return (
             <>
-                <Header
-                    heading="I Ching for Beginners"
-                    subHeading="guidance from the ancient oracle"
-                />
+                <Header />
                 <div className="main-col bg-frost opacity-75 p-8 md:p-4 pb-6">
                     <p className="text-grey-dark text-2xl font-bold tracking-normal">
                         What is the I Ching and how can it benefit me?
@@ -26,16 +23,15 @@ class Home extends React.Component {
                         generating a hexagram via methods such as tossing coins
                         or drawing yarrow stalks. Once you have your hexagram
                         symbol (also referred to as the kua) you can use it to
-                        reference the hexagram interpretation from a book*.
+                        reference the hexagram interpretation from an I Ching
+                        book*.
                     </p>
                     <p className="para-intro">
-                        Why bother doing this? The reason would be to gain
-                        insight into a decision beyond what you have already
-                        considered.
+                        Are you ready to generate your hexagram?
                     </p>
-                    <p>
+                    <p className="para-intro mt-6 flex items-center md:items-start">
                         <Link
-                            className="btn btn-start mt-6"
+                            className="btn btn-action text-center w-full md:w-1/5"
                             to="/build-your-hexagram"
                         >
                             Start
