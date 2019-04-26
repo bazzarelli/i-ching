@@ -38,7 +38,7 @@ class Home extends React.Component {
                             className="btn btn-start mt-6"
                             to="/build-your-hexagram"
                         >
-                            Start
+                            Build Hexagram
                         </Link>
                     </p>
 
