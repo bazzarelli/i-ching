@@ -1,15 +1,27 @@
 import React from 'react';
 import classNames from 'classnames';
 import HexBuilder from './HexBuilder';
-import StartOver from './StartOver';
 
 class CoinToss extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            tossArray: [],
+        };
+    }
+
+    // HERE WE TOUCH THE DOM AND TRIGGER THE ANIMATION
     setCoinSides(tossArr) {
         tossArr.forEach((item, index) => {
-            this[`coin${index + 1}`].className = item & 1 ? 'tails' : 'heads';
+            this[`coin${index + 1}`].className = 'offCanvas';
+            setTimeout(() => {
+                this[`coin${index + 1}`].className =
+                    item & 1 ? 'tails w-1/5' : 'heads w-1/5';
+            }, 50);
         });
     }
 
+    // GET ARRAY OF 3 TOSS VALUES
     tripleToss = () => {
         const coinSides = [2, 3];
 
@@ -22,16 +34,12 @@ class CoinToss extends React.Component {
 
     generateLine = () => {
         const tossArr = this.tripleToss();
-        const lineId = tossArr.reduce((acc, val) => acc + val);
-        this.setCoinSides(tossArr);
+        this.setState(state => ({ tossArray: tossArr }));
 
-        return new Promise(resolve => {
-            setTimeout(() => {
-                resolve(lineId);
-            }, 2600);
-        });
+        return tossArr.reduce((acc, val) => acc + val);
     };
 
+    // 1. ENTRY POINT AFTER CLICKING BUTTON
     hexButtonHandler = () => {
         // prevent button from being clicked until hex is finished
         this.btn.setAttribute('disabled', 'disabled');
@@ -40,12 +48,16 @@ class CoinToss extends React.Component {
         // leave as permanently disabled after length is 6
         if (this.props.hexagram.length === 6) {
             this.props.setHexagramComplete(true);
+            this.props.setHexId(this.props.hexagram);
+            // todo - user doesn't get to see the last toss result build in a delay or something
         } else if (this.props.hexagram.length < 6) {
-            this.generateLine().then(lineId => {
-                this.btn.removeAttribute('disabled');
-                this.btn.className = 'btn btn-action w-2/5';
-                this.props.addLineToHex(lineId);
-            });
+            // CLEAR PREVIOUS DOM HERE
+            const lineId = this.generateLine();
+            this.btn.removeAttribute('disabled');
+            this.btn.className = 'btn btn-action w-2/5';
+            this.props.addLineToHex(lineId);
+
+            // this.setCoinSides(this.state.tossArray);
         }
     };
 
@@ -56,7 +68,6 @@ class CoinToss extends React.Component {
 
     render() {
         const hexCompleted = this.props.hexIsReady;
-
         const tossClasses = classNames('w-1/3', {
             visible: !hexCompleted,
             hidden: hexCompleted,
@@ -85,10 +96,10 @@ class CoinToss extends React.Component {
                             className="btn btn-action w-2/5"
                             type="button"
                         >
-                            toss coins
+                            toss
                         </button>
                         <div
-                            className=" w-1/5"
+                            className="w-1/5"
                             id="coin1"
                             ref={coin1 => {
                                 this.coin1 = coin1;
@@ -98,7 +109,7 @@ class CoinToss extends React.Component {
                             <div className="side-b" />
                         </div>
                         <div
-                            className=" w-1/5"
+                            className="w-1/5"
                             id="coin2"
                             ref={coin2 => {
                                 this.coin2 = coin2;
@@ -108,7 +119,7 @@ class CoinToss extends React.Component {
                             <div className="side-b" />
                         </div>
                         <div
-                            className=" w-1/5"
+                            className="w-1/5"
                             id="coin3"
                             ref={coin3 => {
                                 this.coin3 = coin3;
@@ -128,11 +139,22 @@ class CoinToss extends React.Component {
                 </div>
 
                 <div className={hexagramClasses}>
-                    <HexBuilder hexagram={this.props.hexagram} />
-                    <StartOver reset={this.props.reset} />
+                    <HexBuilder
+                        reset={this.props.reset}
+                        hexagram={this.props.hexagram}
+                        changingHexagram={this.props.changingHexagram}
+                    />
                 </div>
             </div>
         );
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        // console.log('this.props.hexIsReady', this.props.hexIsReady);
+        // console.log('prevProps', prevProps);
+        // console.log('prevState length', prevState.tossArray.length);
+        // console.log('this.state.tossArray', this.state.tossArray);
+        this.setCoinSides(this.state.tossArray);
     }
 }
 

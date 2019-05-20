@@ -27,11 +27,11 @@ class Home extends React.Component {
                         book*.
                     </p>
                     <p className="para-intro">
-                        Are you ready to generate your hexagram?
+                        Are you ready to build your hexagram?
                     </p>
                     <p className="para-intro mt-6 flex items-center md:items-start">
                         <Link
-                            className="btn btn-action text-center w-full md:w-1/5"
+                            className="btn btn-action text-center w-full md:w-2/5"
                             to="/build-your-hexagram"
                         >
                             Build Hexagram

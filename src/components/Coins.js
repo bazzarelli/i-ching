@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 class Coins extends React.Component {
     constructor(props) {
-        super(props);
+        super();
         this.state = {
             side: false,
             lineId: null,
@@ -12,7 +12,6 @@ class Coins extends React.Component {
         console.log('lineId', lineId);
 
         this.setState({
-            // side: lineId % 2 == 0,
             side: lineId & 1,
             lineId: lineId,
         });

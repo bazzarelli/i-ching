@@ -116,6 +116,12 @@ h1 {
     animation: flipTails 2.5s ease-out forwards;
 }
 
+#coin1.offCanvas,
+#coin2.offCanvas,
+#coin3.offCanvas {
+    top: -2000px;
+}
+
 @-webkit-keyframes flipHeads {
     from {
         transform: rotateY(0);

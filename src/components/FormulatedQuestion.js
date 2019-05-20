@@ -28,9 +28,11 @@ class FormulatedQuestion extends React.Component {
                         question={this.props.question}
                         addLineToHex={this.props.addLineToHex}
                         hexagram={this.props.hexagram}
+                        changingHexagram={this.props.changingHexagram}
                         setHexagramComplete={this.props.setHexagramComplete}
                         hexIsReady={this.props.hexIsReady}
                         reset={this.props.reset}
+                        setHexId={this.props.setHexId}
                     />
                 </span>
             </div>

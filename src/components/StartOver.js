@@ -5,6 +5,7 @@ class StartOver extends React.Component {
         const resetAll = {
             question: { clear: true },
             hexagram: { clear: true },
+            changingHexagram: { clear: true },
         };
 
         this.props.reset(resetAll);

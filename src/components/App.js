@@ -3,13 +3,16 @@ import FormulatedQuestion from './FormulatedQuestion';
 import InputQuestion from './InputQuestion';
 import hexes from '../data/hexes';
 import Header from './Header';
+import _ from 'lodash';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             hexLibrary: hexes,
             hexagram: [],
+            changingHexagram: [],
+            transformedHexagram: [],
             hexagramCompleted: false,
             hexagramId: 0,
             question: '',
@@ -23,22 +26,32 @@ class App extends Component {
         const localStorageHexagram = JSON.parse(
             localStorage.getItem('hexagram')
         );
+        const localStorageChangingHexagram = JSON.parse(
+            localStorage.getItem('changingHexagram')
+        );
 
+        if (localStorageQuestion) {
+            this.setState({ question: localStorageQuestion });
+        }
         if (localStorageHexagram) {
             this.setState({ hexagram: localStorageHexagram });
         }
-        if (localStorageQuestion) {
-            this.setState({ question: localStorageQuestion });
+        if (localStorageChangingHexagram) {
+            this.setState({ hexagram: localStorageChangingHexagram });
         }
     }
 
     componentDidUpdate() {
         localStorage.setItem('question', this.state.question);
         localStorage.setItem('hexagram', JSON.stringify(this.state.hexagram));
+        localStorage.setItem(
+            'changingHexagram',
+            JSON.stringify(this.state.changingHexagram)
+        );
     }
 
     clearUserState = items => {
-        const { question, hexagram } = items;
+        const { question, hexagram, changingHexagram } = items;
 
         if (question.clear) {
             localStorage.removeItem('question');
@@ -47,6 +60,10 @@ class App extends Component {
         if (hexagram.clear) {
             localStorage.removeItem('hexagram');
             this.setState({ hexagram: '' });
+        }
+        if (changingHexagram.clear) {
+            localStorage.removeItem('changingHexagram');
+            this.setState({ changingHexagram: '' });
         }
     };
 
@@ -58,29 +75,38 @@ class App extends Component {
 
     addLineToHex = lineId => {
         console.log('lineId', lineId);
-        console.log('this.state.hexagram before', this.state.hexagram);
+        // need to preserve the changing lines before conversion
+        this.setState({
+            changingHexagram: [...this.state.changingHexagram, lineId],
+        });
+        if (lineId === 6) {
+            lineId = 8;
+        } else if (lineId === 9) {
+            lineId = 7;
+        }
+        console.log('lineId post convert', lineId);
         this.setState({
             hexagram: [...this.state.hexagram, lineId],
         });
-        console.log('this.state.hexagram after', this.state.hexagram);
     };
-
-    /*
-    countClicks = n => {
-        let clickCount = { ...this.state.clickCount };
-        clickCount = n;
-        this.setState({ clickCount });
-    };
-*/
 
     setHexagramComplete = hexComplete => {
         if (hexComplete) {
             this.setState({ hexagramCompleted: true });
         }
     };
-    getHexId = hexagram => {
-        // use the hex lib to match array sequence
-        // from the completed toss
+
+    setHexId = hexagram => {
+        console.log('hexagram for line id:', hexagram);
+        console.log('hex complete!');
+        hexes.filter(hex => {
+            // console.log('hex', hex.lines);
+            // console.log('hex.', hexagram);
+            if (_.isEqual(hexagram, hex.lines)) {
+                console.log('biagio;', hex.id);
+                this.setState({ hexagramId: hex.id });
+            }
+        });
     };
 
     render() {
@@ -98,7 +124,9 @@ class App extends Component {
                             question={this.state.question}
                             allHexes={this.state.hexLibrary}
                             addLineToHex={this.addLineToHex}
+                            setHexId={this.setHexId}
                             hexagram={this.state.hexagram}
+                            changingHexagram={this.state.changingHexagram}
                             setHexagramComplete={this.setHexagramComplete}
                             hexIsReady={this.state.hexagramCompleted}
                         />

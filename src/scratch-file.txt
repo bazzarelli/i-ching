@@ -1,3 +1,42 @@
+                <HexLine
+                    hexagramArray={this.props.hexagram}
+                    yPos={this.yPos[5]}
+                />
+                <HexLine
+                    hexagramArray={this.props.hexagram}
+                    yPos={this.yPos[4]}
+                />
+                <HexLine
+                    hexagramArray={this.props.hexagram}
+                    yPos={this.yPos[3]}
+                />
+                <HexLine
+                    hexagramArray={this.props.hexagram}
+                    yPos={this.yPos[2]}
+                />
+                <HexLine
+                    hexagramArray={this.props.hexagram}
+                    yPos={this.yPos[1]}
+                />
+
+
+
+                <animate
+                    attributeName="height"
+                    from="0"
+                    to="35"
+                    dur="0.5s"
+                    fill="freeze"
+                />
+                <animate
+                    attributeName="y"
+                    from="350"
+                    to="360"
+                    dur="0.58s"
+                    fill="freeze"
+                />
+
+
         const LINE_IDS = [6, 7, 8, 9];
         let getLineId = Math.floor(Math.random() * 4);
         const currentLineId = LINE_IDS[getLineId];
@@ -134,3 +173,75 @@ const divStyle = {
 
 
 This kua offers advice about providing food, financial resources, housing, education, spiritual guidance or information, material matters, and other forms of sustenance to yourself and to others. When you take care of others, do not weaken them with your generosity, for nothing is as powerful as necessity when it comes to strengthening the will and creating a strong work ethic. Avoid depriving others of the benefits of providing for themselves, for unearned wealth always works to destroy us. If you offer opportunities and education to deserving people so they can earn their own livelihood, great benefit will accrue to you and to them. What is more, they in turn will later nourish others and thus society as a whole. Superior people are moderate and temperate in their eating, drinking, and speech. Regarding food, take care to eat a healthy diet, and to eat in moderation. In matters of income, finances, wealth, and other forms of material sustenance, do not permit others to provide for you if you can provide for yourself, for accepting such favors will only weaken and shame you. This is not to say that you should not give or accept gifts, but that you should learn to become strong and independent and teach others to do the same. Wise individuals do not overreach themselves, overspend, or strive needlessly. If you observe the guidance of this kua, you will live long and well, prosper greatly, and be of major benefit to yourself and to others. Great good fortune and success will be yours.
+
+
+
+import React from 'react';
+
+class HexLine extends React.Component {
+    render() {
+        console.log('currentHexState line:', this.props.hexagram);
+        return (
+            <>
+                <rect x="0" y="10" width="395" height="35" fill="black" />
+                <rect x="0" y="80" width="395" height="35" fill="gray" />
+                <rect x="0" y="150" width="395" height="35" fill="black" />
+                {/* <rect x="10" y="220" width="395" height="35" fill="black" /> */}
+                <g fill="black">
+                    <rect x="0" y="220" width="166" height="35" fill="black" />
+                    <rect
+                        x="229"
+                        y="220"
+                        width="166"
+                        height="35"
+                        fill="black"
+                    />
+                </g>
+                <rect x="0" y="290" width="395" height="35" fill="gray" />
+
+                <rect
+                    id="line1"
+                    x="0"
+                    y="360"
+                    width="395"
+                    height="35"
+                    fill="black"
+                >
+                    <animate
+                        attributeName="height"
+                        from="0"
+                        to="35"
+                        dur="0.5s"
+                        fill="freeze"
+                    />
+                    <animate
+                        attributeName="y"
+                        from="350"
+                        to="360"
+                        dur="0.58s"
+                        fill="freeze"
+                    />
+                </rect>
+            </>
+        );
+    }
+}
+
+export default HexLine;
+
+                {this.props.hexagram.map((item, index) => (
+                    <HexLine
+                        key={index}
+                        lineId={item}
+                        hexagramArray={this.props.hexagram}
+                    />
+                ))}
+
+
+                                <animate
+                    attributeName="fill-opacity"
+                    from="0"
+                    to="1"
+                    dur="1s"
+                />
+
