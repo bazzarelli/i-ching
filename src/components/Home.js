@@ -34,7 +34,7 @@ class Home extends React.Component {
                             className="btn btn-action text-center w-full md:w-1/5"
                             to="/build-your-hexagram"
                         >
-                            Start
+                            Build Hexagram
                         </Link>
                     </p>
 
