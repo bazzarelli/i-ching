@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import HexBuilder from './HexBuilder';
 
 class CoinToss extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             tossArray: [],
         };

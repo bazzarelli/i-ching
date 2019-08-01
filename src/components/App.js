@@ -6,8 +6,8 @@ import Header from './Header';
 import _ from 'lodash';
 
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             hexLibrary: hexes,
             hexagram: [],
@@ -99,7 +99,8 @@ class App extends Component {
     setHexId = hexagram => {
         console.log('hexagram for line id:', hexagram);
         console.log('hex complete!');
-        hexes.filter(hex => {
+
+        hexes.forEach(hex => {
             // console.log('hex', hex.lines);
             // console.log('hex.', hexagram);
             if (_.isEqual(hexagram, hex.lines)) {

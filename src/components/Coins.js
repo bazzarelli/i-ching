@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 class Coins extends React.Component {
     constructor(props) {
-        super();
+        super(props);
         this.state = {
             side: false,
             lineId: null,
