@@ -1,6 +1,6 @@
 # I Ching for beginners
 
-## A web-based I Ching utility written using ReactJS and TailwindCSS.
+## A mobile friendly Progressive Web App (ReactJS and TailwindCSS).
 
 This project is for me to learn about ReactJs while exploring the enigmatic I-Ching.
 
