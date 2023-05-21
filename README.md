@@ -4,7 +4,7 @@
 
 This project is for me to learn about ReactJs while exploring the enigmatic I-Ching.
 
-[View i ching webapp demo](https://www.i-ching.app/)
+[View i ching webapp demo](https://angry-agnesi-a74ff0.netlify.app)
 
 ### Source code instructions
 
